@@ -1,0 +1,44 @@
+body {
+  padding: 40px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #da8edd;
+  color: black;
+  justify-content: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.btn {
+  margin: auto;
+  margin-top: 1rem;
+  border: none; 
+  outline: none;
+  color: antiquewhite;
+  padding: 0.5rem 1.5rem;
+  border-radius: 40px;
+  background-color: #83567b;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  
+} 
+
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
