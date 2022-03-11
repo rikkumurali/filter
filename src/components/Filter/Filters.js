@@ -1,9 +1,19 @@
 import React from 'react'
+import Filter from './Filter'
+
 
 const Filters = () => {
   return (
     <div className="borderedContainer">
-        Filters
+        <b>Choose Category: </b>
+        {['Fruit', 'Vegetable','All']
+        .map(category => <Filter 
+        category={category} 
+        isActive={false}
+        
+        />)
+        
+    }
     </div>
   )
 }

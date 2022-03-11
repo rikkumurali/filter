@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import './App.css';
+
+
+// import {Provider} from 'react-redux';
+// import store from './app/store';
+
+
 // import reportWebVitals from './reportWebVitals';
 // import { configureStore} from '@reduxjs/toolkit';
 // import { Provider } from 'react-redux';

@@ -52,19 +52,56 @@
 
 
 import React from 'react'
-import './index.css';
-import Products from './components/Product/Products'
-import Filters from './components/Filter/Filters';
+import Msg from './Msg';
+import './App.css';
+import JSONDATA from './MockData.json';
+import { useState } from 'react';
+// import Products from './components/Product/Products'
+// import Filters from './components/Filter/Filters';
+// import Filter from './components/Filter/Filter';
+// import Cart from './components/Cart/Cart';
 
 const App = () => {
+const [searchTerm, setSearchTerm] = useState("");
+
+
   return (
-    <div>
-      <Filters />
+    <>
+      <div>
+      {/* <Filters />
+      <Filter />
        <Products /> 
-      {/* <Cart /> */} 
+      <Cart />  */}
+     <Msg />
+     
+     <div className="input">
+     <input type="text" placeholder="Search..."  onChange={e => {setSearchTerm(e.target.value);
+    }}/>
+     {JSONDATA.filter((val) => {
+        if (searchTerm =="")
+        {
+          return val
+        } else if (val.last_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+          return val
+        }
+
+     }).map((val, key) => {
+
+      return <div className="user" key={key}> 
+
+        <p>{val.last_name} </p>
+        
+        </div>
+     
+     })
+     }
+      </div>
     </div>
+  
+    </>
   )
+  
 }
 
-export default App
+export default App;
 

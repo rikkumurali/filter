@@ -1,12 +1,16 @@
 
 import QuantityButton from "./QuantityButton";
-
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import addItemToCart from '../../feature/cart/cartSlice'
 
 
 const Product = ({product}) => {
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
     // const arr = ["vegetables","fruits","guava","mango"]
     return (
-      <div className="product">
+      <div className="product productContainer">
           {/* <div>{arr[0]}</div>
           <div>{arr[1]}</div>
           <div>{arr[2]}</div> */}
@@ -24,14 +28,27 @@ const Product = ({product}) => {
               <button> &#43;</button>
             </div> */}
 
-              <QuantityButton />
+              <QuantityButton 
+                  quantity={quantity}
+                  setQuantity={setQuantity}
+              />
 
-            <button className="addToCartButton">ADD TO CART</button>
+            <button className="addToCartButton" onClick={() =>
+            {
+                dispatch(addItemToCart('hi'));
+            
+            }}
+             
+            >
+            
+              ADD TO CART
+            
+              </button>
 
           <a href="/">View Full Details &#8594;</a>
+
           </div>
-        
-        </div>
+      </div>
          
       
     )
